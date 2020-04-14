@@ -40,6 +40,7 @@
                 <label>
                  خیر   <input type="radio" name="show" value="0" class="flat-red" @if(!$slider->show) checked @endif >
                 </label>
+
                 <br/><br/><br/>
                 <label>توضیحات</label>
                 <textarea  id="mytextarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name="description" rows="10" cols="80">{{ $slider->description ?? old("description")}}</textarea>
