@@ -12,7 +12,7 @@ class ValidationController extends Controller
             "description"=>"string | required ",
             "btn_name"=>"string | between:3,100 | required ",
             "btn_link"=>"string | between:8,100 | required ",
-            "image"=>"string  | required ",
+            "image"=>"image  | required ",
             "show"=>"integer  | required ",
         ]);
     }

@@ -14,8 +14,8 @@
                                 <p>{{$item->description}}</p>
 
                                 <div class="btn-box">
-                                    <a href="" class="default-btn">{{$item->btn_name}}<span></span></a>
-                                    <a href="" class="optional-btn">اطلاعات بیشتر <span></span></a>
+                                    <a href="{{$item->btn_link}}" class="default-btn">{{$item->btn_name}}<span></span></a>
+                                    <a href="{{$item->btn_name}}" class="optional-btn">اطلاعات بیشتر <span></span></a>
                                 </div>
                             </div>
                         </div>

@@ -19,7 +19,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body pad">
-            <form action="{{url("app/cmsadmin/admin/sliders/$slider->id")}}" method="post">
+            <form action="{{url("app/cmsadmin/admin/sliders/$slider->id")}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @if($slider->id)
                     {{method_field("PUT")}}
@@ -28,10 +28,10 @@
                 <input class="form-control input-lg" name="title" type="text" placeholder="عنوان" value="{{$slider->title ?? old("title")}}">
                 <br>
                 <label>نام دکمه</label>
-                <input class="form-control input-lg" name="btn_name" type="text" placeholder="نام دکمه" value="{{ $slider->btn_name ?? old("btn")}}">
+                <input class="form-control input-lg" name="btn_name" type="text" placeholder="نام دکمه" value="{{ $slider->btn_name ?? old("btn_name")}}">
                 <br>
                 <label>لینک</label>
-                <input class="form-control input-lg" name="btn_link" type="text" placeholder="لینک" value="{{ $slider->btn_link ?? old("link")}}">
+                <input class="form-control input-lg" name="btn_link" type="text" placeholder="لینک" value="{{ $slider->btn_link ?? old("btn_link")}}">
                 <br>
                 <label>نمایش در سایت: </label>
                 <label>
@@ -45,9 +45,10 @@
                 <label>توضیحات</label>
                 <textarea  id="mytextarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name="description" rows="10" cols="80">{{ $slider->description ?? old("description")}}</textarea>
 
+<br>
 
                 <div class="form-group">
-                    <label for="exampleInputFile">ارسال فایل</label>
+                    <label for="exampleInputFile">تصویر</label>
                     <input name="image" type="file" value="{{ $slider->image ?? old("link")}}" id="exampleInputFile">
 
                     <p class="help-block">متن راهنما</p>

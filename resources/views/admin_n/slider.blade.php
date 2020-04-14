@@ -6,8 +6,19 @@
             <div class="col-xs-12">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">جدول داده مثال ۲</h3>
+            <h3 class="box-title">داده ها</h3>
         </div>
+
+        @if(session('message'))
+        <div  class="alert alert-success alert-dismissible  show" role="alert">
+            <strong style="margin-right: 10px;">   {{session('message')}}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+@endif
+
+
         <!-- /.box-header -->
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped">

@@ -54,9 +54,18 @@ class SliderController extends Controller
     public function update(Request $request, slider $slider)
     {
        $data=ValidationController::sliders();
+        $photo= $request->file('image');
+        $filename=$photo->getClientOriginalName();
+       $data['image']= $filename;
+           $photo->move(base_path().'/storage/app/images',$filename);
        $update=$slider->update($data);
        if($update){
+
+
+
+
            return redirect("app/cmsadmin/admin/sliders");
+
        }
        else{
            return back();
