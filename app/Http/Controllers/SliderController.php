@@ -60,9 +60,7 @@ class SliderController extends Controller
     {
        $data=ValidationController::sliders();
        if ($image=$request->image){
-           if(file_exists($slider->image)){
-               \File::delete($slider->image);
-           }
+
            $photo= $request->file('image');
            $filename=$photo->getClientOriginalExtension();
            $filename= RandomString().".". $filename;
