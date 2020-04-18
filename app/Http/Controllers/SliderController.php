@@ -32,6 +32,11 @@ class SliderController extends Controller
     {
        // dd("here");
   $data=ValidationController::sliders();
+        $photo= $request->file('image');
+        $filename=$photo->getClientOriginalExtension();
+        $filename= RandomString().".". $filename;
+        $data['image']=$filename;
+        $photo->move(base_path().'/storage/app/public',$filename);
   slider::create($data);
         HelperController::flash();
   return redirect("app/cmsadmin/admin/sliders");
@@ -54,10 +59,19 @@ class SliderController extends Controller
     public function update(Request $request, slider $slider)
     {
        $data=ValidationController::sliders();
-        $photo= $request->file('image');
-        $filename=$photo->getClientOriginalName();
-       $data['image']= $filename;
-           $photo->move(base_path().'/storage/app/images',$filename);
+       if ($image=$request->image){
+           if(file_exists($slider->image)){
+               \File::delete($slider->image);
+           }
+           $photo= $request->file('image');
+           $filename=$photo->getClientOriginalExtension();
+           $filename= RandomString().".". $filename;
+           $data['image']=$filename;
+           $data['image']= $filename;
+           $photo->move(base_path().'/storage/app/public',$filename);
+
+       }
+
        $update=$slider->update($data);
        if($update){
 

@@ -43,7 +43,7 @@
                     <td>{{$itme->description}}</td>
                     <td> {{$itme->btn_name}}</td>
                     <td>{{$itme->btn_link}}</td>
-                    <td><img src="{{asset("img/$itme->image")}}" width="190" height="150"/></td>
+                    <td><img src="{{asset("storage/$itme->image")}}" width="190" height="150"/></td>
                     <td class="show-slide" data-show-id="{{$itme->id}}">
                         @if($itme->show)
                             <span class="text-success"><i class="fa fa-check half-x" style="font-size:1.5em;"></i></span>
