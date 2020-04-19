@@ -9,3 +9,12 @@ function RandomString($length = 10) {
 
     return $randomString;
 }
+
+function do_upload($photo){
+
+    $filename=$photo->getClientOriginalExtension();
+    $filename= RandomString().".". $filename;
+
+    $photo->move(base_path().'/storage/app/public',$filename);
+    return $filename;
+}
