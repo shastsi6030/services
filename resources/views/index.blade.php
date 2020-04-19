@@ -115,7 +115,7 @@
         <!-- End About Area -->
 
         <!-- Start Offer Area -->
-        @include("sections.offer")
+{{--        @include("sections.offer")--}}
         <!-- End Offer Area -->
 
         <!-- Start Services Area -->

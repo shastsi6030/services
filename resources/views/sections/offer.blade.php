@@ -1,4 +1,4 @@
-       
+
 
 	   <section class="offer-area ptb-100">
             <div class="container">
@@ -53,4 +53,3 @@
                 </div>
             </div>
         </section>
-		
