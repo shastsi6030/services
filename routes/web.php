@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 //resources Routes
 
 Route::resource('app/cmsadmin/admin/sliders','SliderController');
-Route::resource('app/cmsadmin/admin/aboutus','AboutUsController');
+Route::resource('app/cmsadmin/admin/aboutus','AboutUsController')->only('edit','update','index');
 
 
 

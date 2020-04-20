@@ -39,28 +39,21 @@
 
                                 <tr>
 
-                                    <td>{{$about_us->head}}
+                                    <td>{{$about->head}}
                                     </td>
-                                    <td>{{$about_us->head_text}}</td>
-                                    <td>{{$about_us->text}}</td>
-                                    <td>{{$about_us->red_text}}</td>
-                                    <td> {{$about_us->btn_name}}</td>
-                                    <td>{{$about_us->btn_link}}</td>
-                                    <td><img src="{{asset("storage/$about_us->main_image")}}" width="190" height="150"/></td>
+                                    <td>{{$about->head_text}}</td>
+                                    <td>{{$about->text}}</td>
+                                    <td>{{$about->sentences}}</td>
+                                    <td> {{$about->btn_name}}</td>
+                                    <td>{{$about->btn_link}}</td>
+                                    <td><img src="{{asset("storage/$about->main_photo")}}" width="190" height="150"/></td>
 
 
                                     <td>
-                                        <a href="{{url("app/cmsadmin/admin/aboutus/$about_us->id/edit")}}" title="Edit">  <i class="fa fa-edit half-x" style="font-size:1.5em;"></i></a></td>
+                                        <a href="{{url("app/cmsadmin/admin/aboutus/$about->id/edit")}}" title="Edit">  <i class="fa fa-edit half-x" style="font-size:1.5em;"></i></a></td>
                                     <td>
 
-                                        <form id="aboutus-{{$about_us->id}}" class="danger" action="{{url("app/cmsadmin/admin/aboutus/$about_us->id")}}" method="post" >
-                                            @csrf
-                                            {{method_field('DELETE')}}
-                                            <button type="button" class="btn btn-link" data-id="{{$about_us->id}}">
-                                                <i class="fa fa-trash half-x text-danger" style="font-size:1.5em;"></i>
 
-                                            </button>
-                                        </form>
 
 
                                     </td>
