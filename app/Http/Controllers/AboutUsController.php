@@ -25,6 +25,7 @@ class AboutUsController extends Controller
 
     public function edit()
     {
+
         $about= About_us::find(1);
 
         return view("admin_n.aboutus_form")->with(compact('about'));
@@ -33,6 +34,7 @@ class AboutUsController extends Controller
 
     public function update(Request $request, About_us $about_us)
     {
+
         $about= About_us::find(1);
 $data=$request->validate([
     'head'=>'nullable',
@@ -56,6 +58,14 @@ $data=$request->validate([
             foreach ($offers as $offer){
                 $image=do_upload($offer);
                 AboutPhoto::make($image);
+
+            }
+        }
+        if($photos_tobe_deleted=$request->photo_ids){
+            foreach ($photos_tobe_deleted as $id){
+              $photo_id=  AboutPhoto::find($id);
+              $photo_id->delete();
+
 
             }
         }

@@ -20,6 +20,13 @@ $('#slider-'+TaskId).submit();
     });
 
 
+$('a.delete-photo').click(function () {
+    var id= $(this).attr('data-photo-id');
+    var input= '  <input type="hidden" name="photo_ids[]" value="'+id+'">';
+    $('#photos-tobe-deleted').append(input);
+    $(this).parents('.col-md-4').remove();
+
+});
 });
 function sendAjax(method,formData,target){
 
@@ -59,6 +66,7 @@ function markTask(single_id) {
     $('td.show-slide[data-show-id='+single_id+'] span').toggleClass('text-danger text-success')
     $('td.show-slide[data-show-id='+single_id+'] i').toggleClass('fa-check fa-times')
 }
+
 
 
 

@@ -1,15 +1,7 @@
 @extends('admin_n.dashboard')
 @section('content')
     @include("admin_n.fragments.errors")
-    @if($errors->count() > 0)
-        <p>The following errors have occurred:</p>
 
-        <ul>
-            @foreach($errors->all() as $message)
-                <li>{{$message}}</li>
-            @endforeach
-        </ul>
-    @endif
     <div class="box box-info">
         <div class="box-header">
             <h3 class="box-title">ویرایش درباره ما
@@ -68,8 +60,21 @@
 
 
 
-                <h1>تصاویر دیگر</h1>
-                <div class="form-group">
+                <h1 class="yekan">تصاویر دیگر</h1>
+                <br>
+                @foreach($about->photos as $photo)
+                <div  class="col-md-4 ">
+                    <div class=" text-center"><img src="{{asset("storage/$photo->image")}}" ></div>
+
+                    <br/>
+                    <div class="text-center">   <a href="javascript:void" class="delete-photo text-danger" data-photo-id="{{$photo->id}}" ><i class="fa fa-trash half-x"></i> </a></div>
+
+                </div>
+
+
+                @endforeach
+<br/>
+                <div class="form-group col-md-12">
                     <label for="exampleInputFile">تصویر</label>
                     <input name="images[]" type="file" value="{{ $about->images ?? old("images")}}" id="exampleInputFile" multiple>
 
@@ -79,7 +84,12 @@
 
 
 <hr/>
-                <div class="box-footer">
+                <div id="photos-tobe-deleted">
+{{--                    this div will be fill via jQuey--}}
+
+
+                </div>
+                <div class="box-footer col-md-12 text-center">
                     <button type="submit" class="btn btn-primary">ارسال</button>
                 </div>
 

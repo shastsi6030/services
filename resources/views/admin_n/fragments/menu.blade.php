@@ -102,6 +102,19 @@
             </li>
             <li class="treeview">
                 <a href="#">
+                    <i class="fa fa-edit"></i> <span>درباره ما</span>
+                    <span class="pull-left-container">
+              <i class="fa fa-angle-right pull-left"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('app/cmsadmin/admin/aboutus')}}"><i class="fa fa-circle-o"></i>درباره ما</a></li>
+
+
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
                     <i class="fa fa-table"></i> <span>جداول</span>
                     <span class="pull-left-container">
               <i class="fa fa-angle-right pull-left"></i>
